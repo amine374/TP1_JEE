@@ -25,8 +25,11 @@ public class Login extends HttpServlet
 	{
 		String username = request.getParameter("username");
 		String password  = request.getParameter("password");
+		String poids = request.getParameter("poids");
+		String taille = request.getParameter("taille");
+		String sexe = request.getParameter("gender");
 		
-		if(username.isEmpty() || password.isEmpty())
+		if(username.isEmpty() || password.isEmpty() || poids.isEmpty() || taille.isEmpty())
 		{
 			RequestDispatcher req = request.getRequestDispatcher("Register_3.jsp");
 			req.include(request, response);
